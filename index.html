@@ -4,7 +4,32 @@
     <title>Rock, Paper, Scissors</title>
     <link href="styles/styles.css" rel="stylesheet" />
   </head>
-  <body>
+  <body onload="restart()">
+    <h1 class="body-heading">Rock, paper, Scissors!</h1>
+
+    <h2 class="round-heading">Select the number of rounds:</h2>
+    <form id="rounds" onload="reset()">
+      <label for="3">Best out of 3</label>
+      <input class="rounds-button" value="3" type="radio" name="rounds"/><br>
+      <label for="5">Best out of 5</label>
+      <input class="rounds-button" value="5" type="radio" name="rounds"/><br>
+      <label for="7">Best out of 7</label>
+      <input class="rounds-button" value="7" type="radio" name="rounds"/><br>
+      <button id="submit-rounds" type="button" onclick="roundsChoice()">Submit</button>
+    </form>
+
+    <h2 class="body-heading">Enter 'Rock', 'Paper', or 'Scissors'. Then hit Go!</h2>
+    <form id="games">
+      <input id="input-games" type="text"/>
+      <button id="submit-game" type="button" onclick="newGame()">
+        <strong>Go!</strong>
+    </form>
+
+    <div class="body-heading">
+    <p id="output-games" ></p>
+    <h3 id="final-position"></h3>
+  </div>
+
     <scripts src="main.js"></scripts>
   </body>
 </html>
