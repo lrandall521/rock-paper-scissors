@@ -1,18 +1,18 @@
 let pscore = 0;
 let cscore = 0;
 let record = "";
-let rounds;
+let rounds = 3;
 
 function computerPlay() {
   let r = Math.random() * 3;
-  if (r < 1) return "Rock";
-  if (r < 2) return "Paper";
-  if (r < 3) return "Scissors";
+  if (r < 1) return "rock";
+  if (r < 2) return "paper";
+  if (r < 3) return "scissors"; //make case insensitive
 }
 
 function playRound(playerSelection, computerSelection) {
-  const player = trim(toLowerCase(playerSelection));
-  const computer = toLowerCase(computerSelection);
+  const player = playerSelection;
+  const computer = computerSelection;
 
   if (player == computer) return "Again!!";
   else if (
@@ -36,8 +36,10 @@ function playRound(playerSelection, computerSelection) {
 
 function newGame() {
   record +=
-    playRound(document.getElementById("input").value, computerPlay()) + "\n";
-  document.querySelector("input").textContent = "";
+    playRound(document.getElementById("input-games").value, computerPlay()) +
+    "\n";
+  document.getElementById("input-games").textContent = "";
+  document.querySelector("p").textContent = record;
 
   if (pscore == rounds / 2 + 0.5) {
     document.querySelector(
@@ -45,7 +47,7 @@ function newGame() {
     ).textContent = `You win! You beat the computer ${
       rounds / 2 + 0.5
     } best out of ${rounds}`;
-    return true;
+    break;
   }
   if (cscore == rounds / 2 + 0.5) {
     document.querySelector(
@@ -53,8 +55,8 @@ function newGame() {
     ).textContent = `You lose! The computer beat you ${
       rounds / 2 + 0.5
     } best out of ${rounds}`;
-    return true;
-  } else return false;
+    break;
+  }
 }
 
 function roundsChoice() {
@@ -65,4 +67,14 @@ function roundsChoice() {
   rounds = Number(document.getElementsByName("rounds").value);
 }
 
-function restart() {}
+function restart() {
+  pscore = 0;
+  cscore = 0;
+  record = "";
+  rounds = 3;
+
+  document.getElementsByClassName("rounds-button").checked = false;
+  document.getElements("input-games").textContent = "";
+  document.querySelector("p").textContent = "";
+  document.querySelector("h3").textContent = "";
+}

@@ -5,31 +5,56 @@
     <link href="styles/styles.css" rel="stylesheet" />
   </head>
   <body onload="restart()">
-    <h1 class="body-heading">Rock, paper, Scissors!</h1>
+    <h1 class="body-heading text">Rock, Paper, Scissors!</h1>
 
-    <h2 class="round-heading">Select the number of rounds:</h2>
+    <h2 class="round-heading text">Select the number of rounds:</h2>
     <form id="rounds" onload="reset()">
-      <label for="3">Best out of 3</label>
-      <input class="rounds-button" value="3" type="radio" name="rounds"/><br>
-      <label for="5">Best out of 5</label>
-      <input class="rounds-button" value="5" type="radio" name="rounds"/><br>
-      <label for="7">Best out of 7</label>
-      <input class="rounds-button" value="7" type="radio" name="rounds"/><br>
-      <button id="submit-rounds" type="button" onclick="roundsChoice()">Submit</button>
+      <label class="rounds-3 text" for="3">Best out of 3</label>
+      <input
+        class="rounds-3 radio"
+        value="3"
+        type="radio"
+        name="rounds"
+      /><br />
+      <label class="rounds-5 text" for="5">Best out of 5</label>
+      <input
+        class="rounds-5 radio"
+        value="5"
+        type="radio"
+        name="rounds"
+      /><br />
+      <label class="rounds-7 text" for="7">Best out of 7</label>
+      <input
+        class="rounds-7 radio"
+        value="7"
+        type="radio"
+        name="rounds"
+      /><br />
+      <button
+        id="submit-rounds"
+        class="text"
+        type="button"
+        onclick="roundsChoice()"
+      >
+        <strong>Submit</strong>
+      </button>
     </form>
 
-    <h2 class="body-heading">Enter 'Rock', 'Paper', or 'Scissors'. Then hit Go!</h2>
+    <h2 id="enter" class="body-heading text">
+      Enter 'Rock', 'Paper', or 'Scissors'. Then hit Go!
+    </h2>
     <form id="games">
-      <input id="input-games" type="text"/>
-      <button id="submit-game" type="button" onclick="newGame()">
+      <input id="input-games" class="text" type="text" />
+      <button id="submit-game" class="text" type="button" onclick="newGame()">
         <strong>Go!</strong>
+      </button>
     </form>
 
     <div class="body-heading">
-    <p id="output-games" ></p>
-    <h3 id="final-position"></h3>
-  </div>
+      <p class="text" id="output-games"></p>
+      <h3 class="text" id="final-position"></h3>
+    </div>
 
-    <scripts src="main.js"></scripts>
+    <script src="scripts/main.js"></script>
   </body>
 </html>
