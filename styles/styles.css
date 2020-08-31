@@ -29,6 +29,16 @@ h1 {
   padding: 0px 0px 2% 0px;
 }
 
+#reset {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 40px;
+  width: 100px;
+  font-size: 20px;
+  padding: 0;
+}
+
 button:active {
   background-color: #63d2ff;
   box-shadow: 0px 0px 0px 0px black;
@@ -84,7 +94,7 @@ label {
   padding: 1% 0;
 }
 #games {
-  margin: 1% 56% 1.7% 34%;
+  margin: 1% 56% 1.7% 38%;
   grid-column-gap: 20%;
   display: grid;
   grid-template-columns: auto auto;
@@ -101,7 +111,10 @@ label {
 }
 #output-games {
   font-size: 14pt;
-  line-height: 24pt;
+  line-height: 20pt;
+  display: block;
+  margin: auto;
+  width: 40%;
 }
 #final-position {
   font-size: 24pt;

@@ -3,11 +3,13 @@
   <head>
     <title>Rock, Paper, Scissors</title>
     <link href="styles/styles.css" rel="stylesheet" />
+    <script src="scripts/main.js"></script>
   </head>
-  <body onload="restart()">
+  <body>
     <h1 class="body-heading text">Rock, Paper, Scissors!</h1>
-
+    <button id="reset" class="text" onclick="restart()">Reset All</button>
     <h2 class="round-heading text">Select the number of rounds:</h2>
+
     <form id="rounds" onload="reset()">
       <label class="rounds-3 text" for="3">Best out of 3</label>
       <input
@@ -54,7 +56,5 @@
       <p class="text" id="output-games"></p>
       <h3 class="text" id="final-position"></h3>
     </div>
-
-    <script src="scripts/main.js"></script>
   </body>
 </html>
